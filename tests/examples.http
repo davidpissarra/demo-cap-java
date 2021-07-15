@@ -1,0 +1,49 @@
+### Service Document
+GET http://localhost:8080/odata/v4/browse
+
+### Service $metadata document
+GET http://localhost:8080/odata/v4/browse/$metadata
+
+### Browsing Airports
+GET http://localhost:8080/odata/v4/browse/Airports
+
+### Browsing Airports
+GET http://localhost:8080/odata/v4/browse/Airports?$expand=city,weather
+
+### Get Lisbon Airport info (iata code = LIS)
+GET http://localhost:8080/odata/v4/browse/Airports('LIS')?$expand=city,weather
+
+###
+GET http://localhost:8080/odata/v4/browse/Flights?$expand=origin($expand=weather),destination($expand=weather)
+
+### Submit Flight (budget error)
+POST http://localhost:8080/odata/v4/browse/Flights
+Content-Type : application/json;charset=UTF-8;IEEE754Compatible=true
+
+{
+    "id":"1008",
+    "employee_eid": "FN128373",
+    "price":"55410.20",
+    "origin_iata":"JFK",
+    "destination_iata":"ORY",
+    "airline": "Delta Air Lines"
+}
+
+### Submit Flight
+POST http://localhost:8080/odata/v4/browse/Flights
+Content-Type : application/json;charset=UTF-8;IEEE754Compatible=true
+
+{
+    "id":"1009",
+    "employee_eid": "FN128373",
+    "price":"221.20",
+    "origin_iata":"LIS",
+    "destination_iata":"OSL",
+    "airline": "Norwegian"
+}
+
+### Submit Flight (missing flight)
+DELETE http://localhost:8080/odata/v4/browse/Flights(10010)
+
+### Get employee and his departments
+GET http://localhost:8080/odata/v4/browse/Employees('OP112854')?$expand=flights($expand=destination,origin)

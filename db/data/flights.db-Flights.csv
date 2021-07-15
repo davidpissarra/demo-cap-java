@@ -1,0 +1,8 @@
+id;employee_eid;origin_iata;destination_iata;airline;price;currency_code
+1001;OP112854;LIS;OPO;TAP Portugal;20.00;EUR
+1002;OP112854;CDG;OPO;Air France;120.00;EUR
+1003;OP154810;OSL;LAX;United Airlines;534.49;EUR
+1004;MK821832;LIS;BCN;Vueling Airlines;80.00;EUR
+1005;MK821832;BCN;LIS;Vueling Airlines;74.00;EUR
+1006;SL584410;LAX;CDG;Air France;356.00;EUR
+1007;SL584410;CDG;FNC;TAP Portugal;124.00;EUR
